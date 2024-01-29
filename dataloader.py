@@ -52,6 +52,7 @@ class MnistDataset(Dataset):
             image = self.transform(image)
         if self.target_transform:
             label = self.target_transform(label)
+        image = image.flatten()
         return image, label
 
 
@@ -61,7 +62,7 @@ def main():
 
     train_images, train_labels = next(iter(train_dataloader))
 
-    # print(train_images.shape)
+    print(train_images.shape)
     # exit()
 
     # # Display an example image
